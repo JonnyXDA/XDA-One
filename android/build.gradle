@@ -100,8 +100,6 @@ dependencies {
     compile 'org.apache.commons:commons-lang3:3.3.2'
     compile 'commons-io:commons-io:2.4'
 
-    //compile project(':libraries:cardview-v7')
-    //compile project(':libraries:recyclerview-v7')
     compile 'com.android.support:cardview-v7:21.0.0-rc1'
     compile 'com.android.support:recyclerview-v7:21.0.0-rc1'
 
