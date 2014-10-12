@@ -83,8 +83,8 @@ public class FragmentUtils {
             final ArrayList<String> hierarchy, final ResponsePostContainer container) {
         int pageCount;
         if (container == null) {
-            pageCount = unifiedThread.getReplyCount() / 10;
-            if (unifiedThread.getReplyCount() % 10 != 0) {
+            pageCount = (unifiedThread.getReplyCount() + 1) / 10;
+            if ((unifiedThread.getReplyCount() + 1) % 10 != 0) {
                 pageCount += 1;
             }
         } else {
