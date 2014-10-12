@@ -1,5 +1,11 @@
 package com.xda.one.util;
 
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.text.TextUtils;
+import android.util.Log;
+
 import com.xda.one.R;
 import com.xda.one.api.model.interfaces.Forum;
 import com.xda.one.api.model.response.container.ResponsePostContainer;
@@ -7,12 +13,6 @@ import com.xda.one.model.augmented.AugmentedUnifiedThread;
 import com.xda.one.ui.ForumFragment;
 import com.xda.one.ui.PostPagerFragment;
 import com.xda.one.ui.ThreadFragment;
-
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.text.TextUtils;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -83,8 +83,8 @@ public class FragmentUtils {
             final ArrayList<String> hierarchy, final ResponsePostContainer container) {
         int pageCount;
         if (container == null) {
-            pageCount = unifiedThread.getTotalPosts() / 10;
-            if (unifiedThread.getTotalPosts() % 10 != 0) {
+            pageCount = unifiedThread.getReplyCount() / 10;
+            if (unifiedThread.getReplyCount() % 10 != 0) {
                 pageCount += 1;
             }
         } else {
